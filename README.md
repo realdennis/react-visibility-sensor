@@ -69,6 +69,23 @@ function MyComponent (props) {
 }
 ```
 
+Without using `findDOMNode` in the future, you can specific what should be observed using `ref`.
+
+```js
+function MyComponent(props) {
+  return (
+    <VisibilitySensor>
+      {({ isVisible, ref }) => (
+        <div>
+          <p>The footer is {isVisible ? "visible" : "invisible"}</p>
+          <footer ref={ref}>I am footer</footer>
+        </div>
+      )}
+    </VisibilitySensor>
+  );
+}
+```
+
 Props
 ----
 
